@@ -1,7 +1,6 @@
 import { useParams, Link } from "react-router-dom";
 import { products } from "@/data/products";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+// REMOVED: Header and Footer imports
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { ArrowLeft, CheckCircle } from "lucide-react";
 
@@ -26,13 +25,13 @@ const ProductDetail = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Header />
+      {/* REMOVED: <Header /> was here */}
 
       {/* Hero banner */}
-      <section className="relative pt-24 pb-16 section-dark">
+      <section className="relative pt-12 pb-16 section-dark"> {/* Reduced pt-24 to pt-12 since header is gone */}
         <div className="container-main px-4">
-          <Link to="/#products" className="inline-flex items-center gap-2 text-accent text-sm mb-6 hover:underline">
-            <ArrowLeft size={16} /> Back to Products
+          <Link to="/" className="inline-flex items-center gap-2 text-accent text-sm mb-6 hover:underline">
+            <ArrowLeft size={16} /> Back to Home
           </Link>
           <h1 className="section-title mb-2">{product.name}</h1>
           <p className="text-dark-surface-foreground/70 max-w-3xl">{product.description}</p>
@@ -43,13 +42,12 @@ const ProductDetail = () => {
         <div className="container-main">
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Image */}
-            <div className="rounded-lg overflow-hidden shadow-lg">
+            <div className="rounded-lg overflow-hidden shadow-lg bg-zinc-800">
               <img src={product.image} alt={product.name} className="w-full h-full object-cover" />
             </div>
 
             {/* Details */}
             <div>
-              {/* Specs Table */}
               <h3 className="font-heading font-semibold text-xl mb-4 uppercase tracking-wider">Technical Specifications</h3>
               <div className="border rounded-lg overflow-hidden mb-8">
                 {product.specifications.map((spec, i) => (
@@ -60,7 +58,6 @@ const ProductDetail = () => {
                 ))}
               </div>
 
-              {/* Sizes */}
               <h3 className="font-heading font-semibold text-xl mb-4 uppercase tracking-wider">Available Sizes</h3>
               <div className="flex flex-wrap gap-2 mb-8">
                 {product.sizes.map((s) => (
@@ -68,7 +65,6 @@ const ProductDetail = () => {
                 ))}
               </div>
 
-              {/* Applications */}
               <h3 className="font-heading font-semibold text-xl mb-4 uppercase tracking-wider">Applications</h3>
               <ul className="space-y-2 mb-8">
                 {product.applications.map((a) => (
@@ -86,7 +82,6 @@ const ProductDetail = () => {
         </div>
       </section>
 
-      {/* Inline quote form */}
       <section id="product-quote" className="section-padding bg-secondary">
         <div className="container-main max-w-2xl">
           <div className="text-center mb-8">
@@ -98,7 +93,7 @@ const ProductDetail = () => {
               <input type="text" placeholder="Your Name *" required className="w-full px-4 py-3 rounded border border-border bg-card text-foreground focus:outline-none focus:ring-2 focus:ring-accent" />
               <input type="tel" placeholder="Phone Number *" required className="w-full px-4 py-3 rounded border border-border bg-card text-foreground focus:outline-none focus:ring-2 focus:ring-accent" />
             </div>
-            <input type="text" value={product.name} readOnly className="w-full px-4 py-3 rounded border border-border bg-secondary text-foreground" />
+            <input type="text" value={product.name} readOnly className="w-full px-4 py-3 rounded border border-border bg-zinc-100 text-zinc-900" />
             <input type="text" placeholder="Approximate Quantity" className="w-full px-4 py-3 rounded border border-border bg-card text-foreground focus:outline-none focus:ring-2 focus:ring-accent" />
             <textarea rows={3} placeholder="Additional Requirements" className="w-full px-4 py-3 rounded border border-border bg-card text-foreground focus:outline-none focus:ring-2 focus:ring-accent resize-none" />
             <button type="submit" className="btn-hero-primary w-full">Submit Enquiry</button>
@@ -106,7 +101,7 @@ const ProductDetail = () => {
         </div>
       </section>
 
-      <Footer />
+      {/* REMOVED: <Footer /> was here */}
       <WhatsAppButton />
     </div>
   );

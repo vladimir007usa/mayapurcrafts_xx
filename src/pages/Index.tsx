@@ -1,5 +1,3 @@
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import HeroSection from "@/components/sections/HeroSection";
 import AboutSection from "@/components/sections/AboutSection";
@@ -14,7 +12,9 @@ import ContactSection from "@/components/sections/ContactSection";
 const Index = () => {
   return (
     <div className="min-h-screen">
-      <Header />
+      {/* NOTE: Header and Footer are removed from here. 
+        They are now handled in App.tsx using conditional rendering.
+      */}
       <main>
         <HeroSection />
         <AboutSection />
@@ -26,7 +26,6 @@ const Index = () => {
         <QuoteSection />
         <ContactSection />
       </main>
-      <Footer />
       <WhatsAppButton />
     </div>
   );

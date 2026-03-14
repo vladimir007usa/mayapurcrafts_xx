@@ -13,16 +13,40 @@ const AboutSection = () => {
 
   return (
     <section id="about" className="section-padding bg-background">
-      <div ref={ref} className={`container-main transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
+      <div 
+        ref={ref} 
+        className={`container-main transition-all duration-700 ${
+          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+        }`}
+      >
         <div className="text-center mb-16">
           <div className="accent-bar mx-auto mb-4" />
-          <h2 className="section-title text-foreground">About Mayapurcrafts</h2>
-          <p className="section-subtitle mx-auto mt-4">
-            Established with a vision to revolutionize the construction material industry, 
-            Mayapurcrafts is a trusted name in precision-engineered building products. 
-            With cutting-edge technology and a commitment to quality, we serve builders, 
-            contractors, and developers across the region.
-          </p>
+          <h2 className="section-title text-foreground">About Mayapur Crafts</h2>
+          
+          <div className="section-subtitle mx-auto mt-6 text-center space-y-12 w-full max-w-[1400px]">
+            
+            {/* Pyramid 1: Precision Tapered */}
+            <p className="leading-relaxed w-full">
+              Established with a commitment to quality and innovation, Mayapur Crafts offers a wide spectrum of premium UPVC windows  
+              <br className="md:block hidden" />
+              and doors, along with professional installation and reliable in-house servicing to ensure long-term and peace of mind.
+              
+          
+            </p>
+            
+            {/* Pyramid 2: Sentence 1 stays on one full-length line */}
+            <p className="leading-relaxed w-full">
+              In addition, Mayapur Crafts manufactures concrete hollow blocks designed for modern construction techniques.
+              <br className="md:block hidden" />
+              These blocks provide excellent temperature insulation, superior durability, and significantly increase the 
+              <br className="md:block hidden" />
+              speed of wall construction. For those who prefer a more traditional approach, we also produce 
+              <br className="md:block hidden" />
+              high-strength concrete bricks that are 10–12 times stronger than 
+              <br className="md:block hidden" />
+              standard red bricks and pavement tiles built to last.
+            </p>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">

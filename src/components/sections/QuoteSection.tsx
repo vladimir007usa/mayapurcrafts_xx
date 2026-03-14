@@ -14,8 +14,14 @@ const QuoteSection = () => {
   };
 
   return (
+    // The ID here must match the handleNavClick parameter in Header.tsx
     <section id="quote" className="section-padding bg-background">
-      <div ref={ref} className={`container-main transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
+      <div 
+        ref={ref} 
+        className={`container-main transition-all duration-700 ${
+          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+        }`}
+      >
         <div className="max-w-2xl mx-auto">
           <div className="text-center mb-12">
             <div className="accent-bar mx-auto mb-4" />

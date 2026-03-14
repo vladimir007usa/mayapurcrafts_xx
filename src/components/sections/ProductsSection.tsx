@@ -1,14 +1,65 @@
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
-import { products } from "@/data/products";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+
+// Asset Imports
+import windowsImg from "@/assets/product-windows.jpg";
+import doorsImg from "@/assets/product-doors.jpg";
+import kitchenImg from "@/assets/modular-kitchen.jpg";
+import blocksImg from "@/assets/product-blocks.jpg";
+import kerbstonesImg from "@/assets/product-kerbstones.jpg";
+import paversImg from "@/assets/product-pavers.jpg";
+
+const productsData = [
+  {
+    id: "upvc-windows",
+    name: "uPVC Windows",
+    image: windowsImg,
+    shortDescription: "High-performance energy-efficient UPVC windows for modern homes."
+  },
+  {
+    id: "upvc-doors",
+    name: "uPVC Doors",
+    image: doorsImg,
+    shortDescription: "Durable and stylish UPVC doors designed for maximum security."
+  },
+  {
+    id: "modular-kitchen",
+    name: "Modular Kitchen",
+    image: kitchenImg,
+    shortDescription: "Customized modular kitchen solutions with premium finishes."
+  },
+  {
+    id: "hollow-blocks",
+    name: "Hollow Blocks (concrete)",
+    image: blocksImg,
+    shortDescription: "Strong and lightweight concrete hollow blocks for faster construction."
+  },
+  {
+    id: "bricks",
+    name: "Bricks (concrete)",
+    image: kerbstonesImg,
+    shortDescription: "High-strength concrete bricks, 10–12 times stronger than standard red bricks."
+  },
+  {
+    id: "pavement-blocks",
+    name: "Pavement Blocks",
+    image: paversImg,
+    shortDescription: "Heavy-duty interlocking pavement blocks for driveways and paths."
+  }
+];
 
 const ProductsSection = () => {
   const { ref, isVisible } = useScrollAnimation();
 
   return (
     <section id="products" className="section-padding section-dark">
-      <div ref={ref} className={`container-main transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
+      <div 
+        ref={ref} 
+        className={`container-main transition-all duration-1000 ${
+          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+        }`}
+      >
         <div className="text-center mb-16">
           <div className="accent-bar mx-auto mb-4" />
           <h2 className="section-title">Our Products</h2>
@@ -19,18 +70,18 @@ const ProductsSection = () => {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {products.map((product, i) => (
+          {productsData.map((product, i) => (
             <Link
               to={`/products/${product.id}`}
               key={product.id}
-              className="group bg-dark-card rounded-lg overflow-hidden border border-dark-surface-foreground/10 hover:border-accent/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl"
-              style={{ animationDelay: `${i * 0.1}s` }}
+              className="group bg-dark-card rounded-lg overflow-hidden border border-dark-surface-foreground/10 hover:border-accent/40 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl"
+              style={{ transitionDelay: `${i * 100}ms` }}
             >
-              <div className="aspect-[4/3] overflow-hidden">
+              <div className="aspect-[4/3] overflow-hidden bg-zinc-800">
                 <img
                   src={product.image}
                   alt={product.name}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                   loading="lazy"
                 />
               </div>

@@ -1,9 +1,26 @@
 import { Link } from "react-router-dom";
-import { Phone, Mail, MapPin, Clock, ArrowUp } from "lucide-react";
+import { 
+  Phone, 
+  Mail, 
+  MapPin, 
+  Clock, 
+  ArrowUp, 
+  Facebook, 
+  Instagram, 
+  Linkedin, 
+  Youtube 
+} from "lucide-react";
 import { products } from "@/data/products";
 
 const Footer = () => {
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
+
+  const socialLinks = [
+    { name: "Facebook", icon: <Facebook size={18} />, url: "#" },
+    { name: "Instagram", icon: <Instagram size={18} />, url: "#" },
+    { name: "Linkedin", icon: <Linkedin size={18} />, url: "#" },
+    { name: "Youtube", icon: <Youtube size={18} />, url: "#" },
+  ];
 
   return (
     <footer className="section-dark">
@@ -19,13 +36,14 @@ const Footer = () => {
               and rigorous quality control. Trusted by builders across the region.
             </p>
             <div className="flex gap-4 mt-6">
-              {["facebook", "instagram", "linkedin", "youtube"].map((s) => (
+              {socialLinks.map((s) => (
                 <a
-                  key={s}
-                  href="#"
-                  className="w-9 h-9 rounded-full border border-dark-surface-foreground/20 flex items-center justify-center text-dark-surface-foreground/60 hover:bg-accent hover:border-accent hover:text-accent-foreground transition-all text-xs uppercase"
+                  key={s.name}
+                  href={s.url}
+                  aria-label={s.name}
+                  className="w-10 h-10 rounded-full border border-dark-surface-foreground/20 flex items-center justify-center text-dark-surface-foreground/60 hover:bg-accent hover:border-accent hover:text-accent-foreground transition-all"
                 >
-                  {s[0].toUpperCase()}
+                  {s.icon}
                 </a>
               ))}
             </div>
@@ -63,10 +81,22 @@ const Footer = () => {
           <div>
             <h4 className="font-heading font-semibold text-lg mb-4 uppercase tracking-wider">Contact Us</h4>
             <ul className="space-y-3 text-sm text-dark-surface-foreground/70">
-              <li className="flex gap-3"><MapPin size={18} className="text-accent shrink-0 mt-0.5" /> Plot No. 42, Industrial Area, Phase II, Mayapur, West Bengal 741313</li>
-              <li className="flex gap-3"><Phone size={18} className="text-accent shrink-0" /> +91 98765 43210</li>
-              <li className="flex gap-3"><Mail size={18} className="text-accent shrink-0" /> info@mayapurcrafts.com</li>
-              <li className="flex gap-3"><Clock size={18} className="text-accent shrink-0" /> Mon – Sat: 9:00 AM – 6:00 PM</li>
+              <li className="flex gap-3">
+                <MapPin size={18} className="text-accent shrink-0 mt-0.5" /> 
+                12, National Highway, Dhubulia, Chaugachhahansadanga, West Bengal 741140, India
+              </li>
+              <li className="flex gap-3">
+                <Phone size={18} className="text-accent shrink-0" /> 
+                +91 760 18 33 858
+              </li>
+              <li className="flex gap-3">
+                <Mail size={18} className="text-accent shrink-0" /> 
+                info@mayapurcrafts.com
+              </li>
+              <li className="flex gap-3">
+                <Clock size={18} className="text-accent shrink-0" /> 
+                Mon – Sat: 9:00 AM – 6:00 PM
+              </li>
             </ul>
           </div>
         </div>
@@ -75,7 +105,10 @@ const Footer = () => {
           <p className="text-xs text-dark-surface-foreground/50">
             © {new Date().getFullYear()} Mayapurcrafts. All rights reserved.
           </p>
-          <button onClick={scrollToTop} className="w-10 h-10 rounded-full border border-dark-surface-foreground/20 flex items-center justify-center text-dark-surface-foreground/60 hover:bg-accent hover:border-accent hover:text-accent-foreground transition-all">
+          <button 
+            onClick={scrollToTop} 
+            className="w-10 h-10 rounded-full border border-dark-surface-foreground/20 flex items-center justify-center text-dark-surface-foreground/60 hover:bg-accent hover:border-accent hover:text-accent-foreground transition-all"
+          >
             <ArrowUp size={18} />
           </button>
         </div>
