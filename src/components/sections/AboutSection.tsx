@@ -1,5 +1,7 @@
 import { Cog, TrendingUp, ShieldCheck, Truck } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+// Adjust the import path as needed for your project structure
+import mayapur_crafts15 from "@/assets/mayapur_crafts15.jpg"; 
 
 const reasons = [
   { icon: Cog, title: "Advanced Machinery", desc: "State-of-the-art automated production lines ensuring precision and consistency." },
@@ -23,32 +25,48 @@ const AboutSection = () => {
           <div className="accent-bar mx-auto mb-4" />
           <h2 className="section-title text-foreground">About Mayapur Crafts</h2>
           
-          <div className="section-subtitle mx-auto mt-6 text-center space-y-12 w-full max-w-[1400px]">
+          {/* IMAGE CONTAINER WITH TEXT OVERLAY */}
+          <div className="relative mt-10 rounded-3xl overflow-hidden shadow-2xl group">
+            {/* The Image (Big in the middle) */}
+            <img 
+              src={mayapur_crafts15} 
+              alt="Mayapur Crafts Production" 
+              className="w-full h-[650px] object-cover"
+            />
             
-            {/* Pyramid 1: Precision Tapered */}
-            <p className="leading-relaxed w-full">
-              Established with a commitment to quality and innovation, Mayapur Crafts offers a wide spectrum of premium UPVC windows  
-              <br className="md:block hidden" />
-              and doors, along with professional installation and reliable in-house servicing to ensure long-term and peace of mind.
+            {/* Dark Overlay for Readability */}
+            <div className="absolute inset-0 bg-black/50 flex items-center justify-center p-6 md:p-12">
               
-          
-            </p>
-            
-            {/* Pyramid 2: Sentence 1 stays on one full-length line */}
-            <p className="leading-relaxed w-full">
-              In addition, Mayapur Crafts manufactures concrete hollow blocks designed for modern construction techniques.
-              <br className="md:block hidden" />
-              These blocks provide excellent temperature insulation, superior durability, and significantly increase the 
-              <br className="md:block hidden" />
-              speed of wall construction. For those who prefer a more traditional approach, we also produce 
-              <br className="md:block hidden" />
-              high-strength concrete bricks that are 10–12 times stronger than 
-              <br className="md:block hidden" />
-              standard red bricks and pavement tiles built to last.
-            </p>
+              {/* ORIGINAL TEXT DESIGN - No changes to style or pyramid shape */}
+              <div className="section-subtitle mx-auto text-center space-y-12 w-full max-w-[1400px] text-white">
+                
+                {/* Pyramid 1: Precision Tapered */}
+                <p className="leading-relaxed w-full">
+                  Established with a commitment to quality and innovation, Mayapur Crafts offers a wide spectrum of premium UPVC windows  
+                  <br className="md:block hidden" />
+                  and doors, along with professional installation and reliable in-house servicing to ensure long-term and peace of mind.
+                  
+      
+                </p>
+                
+                {/* Pyramid 2: Sentence 1 stays on one full-length line */}
+                <p className="leading-relaxed w-full">
+                  In addition, Mayapur Crafts manufactures concrete hollow blocks designed for modern construction techniques.
+                  <br className="md:block hidden" />
+                  These blocks provide excellent temperature insulation, superior durability, and significantly increase the 
+                  <br className="md:block hidden" />
+                  speed of wall construction. For those who prefer a more traditional approach, we also produce 
+                  <br className="md:block hidden" />
+                  high-strength concrete bricks that are 10–12 times stronger than 
+                  <br className="md:block hidden" />
+                  standard red bricks and pavement tiles built to last.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
 
+        {/* Feature Cards Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {reasons.map((r, i) => (
             <div
