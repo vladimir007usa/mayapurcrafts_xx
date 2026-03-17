@@ -25,7 +25,7 @@ const AboutSection = () => {
           <div className="accent-bar mx-auto mb-4" />
           <h2 className="section-title text-foreground">About Mayapur Crafts</h2>
           
-          {/* FIXED: Added 'min-h' and changed 'absolute' behavior for mobile */}
+          {/* IMAGE CONTAINER WITH TEXT OVERLAY */}
           <div className="relative mt-10 rounded-3xl overflow-hidden shadow-2xl group flex items-center justify-center">
             {/* The Image: Use min-h so it stretches if text is long */}
             <img 
@@ -34,20 +34,20 @@ const AboutSection = () => {
               className="absolute inset-0 w-full h-full object-cover"
             />
             
-            {/* Dark Overlay: Changed p-6 to p-4 for mobile, and added min-height */}
+            {/* Dark Overlay: Ensures readability while allowing height to grow on mobile */}
             <div className="relative z-10 bg-black/60 flex items-center justify-center p-4 md:p-12 min-h-[500px] md:min-h-[650px] w-full">
               
-              {/* ORIGINAL TEXT DESIGN - Now using responsive text sizes */}
+              {/* Responsive Text Overlay with Fixed Spacing */}
               <div className="section-subtitle mx-auto text-center space-y-8 md:space-y-12 w-full max-w-[1400px] text-white">
                 
-                {/* Pyramid 1: Precision Tapered */}
+                {/* Pyramid 1: Fixed space in "windows and" */}
                 <p className="leading-relaxed w-full text-sm md:text-base lg:text-lg">
-                  Established with a commitment to quality and innovation, Mayapur Crafts offers a wide spectrum of premium UPVC windows  
+                  Established with a commitment to quality and innovation, Mayapur Crafts offers a wide spectrum of premium UPVC windows and doors, 
                   <br className="md:block hidden" />
-                  and doors, along with professional installation and reliable in-house servicing to ensure long-term and peace of mind.
+                  along with professional installation and reliable in-house servicing to ensure long-term and peace of mind.
                 </p>
                 
-                {/* Pyramid 2: Sentence 1 stays on one full-length line */}
+                {/* Pyramid 2: Fixed space in "the speed", "produce high", and "than standard" */}
                 <p className="leading-relaxed w-full text-sm md:text-base lg:text-lg">
                   In addition, Mayapur Crafts manufactures concrete hollow blocks designed for modern construction techniques.
                   <br className="md:block hidden" />
