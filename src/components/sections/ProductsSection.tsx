@@ -3,7 +3,7 @@ import { ArrowRight } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 // Asset Imports
-import windowsImg from "@/assets/mayapur_craftsz.jpg";
+import windowsImg from "@/assets/mayapur_crafts1_.jpg";
 import doorsImg from "@/assets/product-doors.jpg";
 import kitchenImg from "@/assets/modular-kitchen.jpg";
 import blocksImg from "@/assets/mayapur_crafts25.jpg";

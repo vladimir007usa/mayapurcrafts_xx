@@ -1,5 +1,5 @@
 import productBlocks from "@/assets/mayapur_crafts25.jpg";
-import productWindows from "@/assets/mayapur_craftSz.jpg";
+import productWindows from "@/assets/mayapur_craftS1_.jpg";
 import productDoors from "@/assets/product-doors.jpg";
 import productPavers from "@/assets/mayapur_crafts39.jpg";
 import productKerbstones from "@/assets/product-kerbstones.jpg";
