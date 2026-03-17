@@ -3,12 +3,12 @@ import { ArrowRight } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 // Asset Imports
-import windowsImg from "@/assets/product-windows.jpg";
+import windowsImg from "@/assets/mayapur_crafts1_.jpg";
 import doorsImg from "@/assets/product-doors.jpg";
 import kitchenImg from "@/assets/modular-kitchen.jpg";
-import blocksImg from "@/assets/product-blocks.jpg";
+import blocksImg from "@/assets/mayapur_crafts25.jpg";
 import kerbstonesImg from "@/assets/product-kerbstones.jpg";
-import paversImg from "@/assets/product-pavers.jpg";
+import paversImg from "@/assets/mayapur_crafts39.jpg";
 
 const productsData = [
   {
