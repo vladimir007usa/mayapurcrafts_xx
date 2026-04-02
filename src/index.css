@@ -122,6 +122,52 @@
            w-14 h-14 rounded-full flex items-center justify-center shadow-lg 
            hover:scale-110 transition-transform duration-300 cursor-pointer;
   }
+
+  /* ──────── Fixed Background Parallax Window ──────── */
+  .parallax-window {
+    position: relative;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* iOS/mobile fallback — fixed backgrounds don't work on mobile */
+  @supports (-webkit-touch-callout: none) {
+    .parallax-window {
+      background-attachment: scroll;
+    }
+  }
+
+  .parallax-window-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      180deg,
+      hsla(220, 25%, 10%, 0.65) 0%,
+      hsla(220, 25%, 10%, 0.40) 50%,
+      hsla(220, 25%, 10%, 0.65) 100%
+    );
+  }
+
+  .parallax-window-content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    padding: 3rem 1rem;
+    max-width: 48rem;
+    margin: 0 auto;
+  }
+
+  /* Ensure content sections above/below have solid backgrounds and sit ON TOP */
+  .section-solid {
+    position: relative;
+    z-index: 2;
+  }
 }
 
 html {

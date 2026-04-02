@@ -3,6 +3,7 @@ import HeroSection from "@/components/sections/HeroSection";
 import AboutSection from "@/components/sections/AboutSection";
 import ProductsSection from "@/components/sections/ProductsSection";
 import ProcessSection from "@/components/sections/ProcessSection";
+import ParallaxWindow from "@/components/sections/ParallaxWindow";
 import ProjectsSection from "@/components/sections/ProjectsSection";
 import InfrastructureSection from "@/components/sections/InfrastructureSection";
 import TestimonialsSection from "@/components/sections/TestimonialsSection";
@@ -17,14 +18,20 @@ const Index = () => {
       */}
       <main>
         <HeroSection />
-        <AboutSection />
-        <ProductsSection />
-        <ProcessSection />
-        <ProjectsSection />
-        <InfrastructureSection />
-        <TestimonialsSection />
-        <QuoteSection />
-        <ContactSection />
+        <div className="section-solid">
+          <AboutSection />
+          <ProductsSection />
+          <ProcessSection />
+        </div>
+        {/* Fixed background image — stays in place while content scrolls over it */}
+        <ParallaxWindow />
+        <div className="section-solid">
+          <ProjectsSection />
+          <InfrastructureSection />
+          <TestimonialsSection />
+          <QuoteSection />
+          <ContactSection />
+        </div>
       </main>
       <WhatsAppButton />
     </div>
