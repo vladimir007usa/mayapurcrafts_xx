@@ -1,16 +1,16 @@
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import project1 from "@/assets/project-1.png";
-import project2 from "@/assets/project-2.png";
-import project3 from "@/assets/project-3.png";
-import project4 from "@/assets/project-4.png";
-
+import project1 from "@/assets/mayapur_crafts1_.jpg";
+import project2 from "@/assets/mayapur_crafts25.jpg";
+import project3 from "@/assets/mayapur_crafts31.jpg";
+import project4 from "@/assets/mayapur_crafts39.jpg";
 
 const gallery = [
-  { src: project1, alt: "Modern construction site with premium concrete blocks" },
-  { src: project2, alt: "Luxury residential courtyard with modular pavers" },
-  { src: project3, alt: "Sleek industrial interior with high-performance windows" },
-  { src: project4, alt: "State-of-the-art concrete manufacturing facility" },
+  { src: project1, alt: "Mayapur Crafts concrete blocks in production" },
+  { src: project2, alt: "Finished pavers installation on-site" },
+  { src: project3, alt: "Modern industrial project featuring our concrete products" },
+  { src: project4, alt: "Large scale construction using Mayapur Crafts materials" },
 ];
+
 
 
 const ProjectsSection = () => {
