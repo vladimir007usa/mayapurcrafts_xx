@@ -39,9 +39,7 @@ const HeroSection = () => {
           <button onClick={() => scrollTo("#products")} className="btn-hero-primary">
             View Products
           </button>
-          <button onClick={() => scrollTo("#quote")} className="btn-hero-outline">
-            Get a Quote
-          </button>
+
         </div>
       </div>
     </section>
