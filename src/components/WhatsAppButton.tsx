@@ -18,7 +18,7 @@ const WhatsAppIcon = ({ size = 24, className = "" }: WhatsAppIconProps) => (
 
 const WhatsAppButton = () => (
   <a
-    href="https://wa.me/919876543210?text=Hello%2C%20I%20am%20interested%20in%20your%20products."
+    href="https://wa.me/917601833858?text=Hello%2C%20I%20am%20interested%20in%20your%20products."
     target="_blank"
     rel="noopener noreferrer"
     className="whatsapp-float group"
@@ -27,6 +27,7 @@ const WhatsAppButton = () => (
     <WhatsAppIcon size={32} className="transition-transform duration-300 group-hover:scale-110" />
   </a>
 );
+
 
 export default WhatsAppButton;
 
