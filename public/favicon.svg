@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <!-- Rounded square background with brand accent color -->
+  <rect width="64" height="64" rx="14" fill="#1a2332"/>
+  <!-- Accent bar at top -->
+  <rect x="12" y="8" width="40" height="3" rx="1.5" fill="#e07b2a"/>
+  <!-- Letter M -->
+  <path d="M12 50V22l10 14 10-14v28h-5V34l-5 7-5-7v16h-5z" fill="#ffffff"/>
+  <!-- Letter C -->
+  <path d="M44 26c-1.5-2-4-4-7.5-4C31 22 27 26.5 27 33s4 11 9.5 11c3.5 0 6-2 7.5-4l4 3c-2.5 3-6.5 6-11.5 6C29 49 23 42.5 23 33s6-16 13.5-16c5 0 9 3 11.5 6l-4 3z" fill="#e07b2a"/>
+  <!-- Accent bar at bottom -->
+  <rect x="12" y="53" width="40" height="3" rx="1.5" fill="#e07b2a"/>
+</svg>
