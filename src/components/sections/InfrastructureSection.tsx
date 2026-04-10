@@ -1,6 +1,7 @@
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { Factory, Maximize, Warehouse, Cog } from "lucide-react";
-import factoryImg from "@/assets/factory-exterior.jpg";
+import factoryImg from "@/assets/infrastructure-clean.png";
+
 
 const stats = [
   { icon: Factory, value: "5+", label: "Production Lines" },
