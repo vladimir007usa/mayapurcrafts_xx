@@ -114,10 +114,11 @@ const Header = () => {
               </button>
             ))}
             <a
-              href="tel:+919239633577" 
+              href="tel:+917601833858" 
               className="flex items-center gap-2 text-accent font-semibold mt-2"
             >
-              <Phone size={18} /> +91 92396 33577
+              <Phone size={18} /> +91 760 18 33 858
+
             </a>
           </nav>
         </div>
