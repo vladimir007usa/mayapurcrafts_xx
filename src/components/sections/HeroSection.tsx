@@ -1,10 +1,6 @@
 import heroImg from "@/assets/hero-factory.jpg";
-import heroVideo from "@/assets/hero-factory-video.mp4";
-import { useState } from "react";
 
 const HeroSection = () => {
-  const [videoLoaded, setVideoLoaded] = useState(false);
-
   const scrollTo = (id: string) => {
     const el = document.querySelector(id);
     if (el) el.scrollIntoView({ behavior: "smooth" });
@@ -13,30 +9,9 @@ const HeroSection = () => {
   return (
     <section 
       id="hero" 
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-cover bg-center bg-no-repeat"
+      style={{ backgroundImage: `url(${heroImg})` }}
     >
-      {/* Static image fallback — always visible until video loads */}
-      <img
-        src={heroImg}
-        alt=""
-        aria-hidden="true"
-        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${videoLoaded ? "opacity-0" : "opacity-100"}`}
-      />
-
-      {/* Lazy-loaded video background */}
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="metadata"
-        onCanPlayThrough={() => setVideoLoaded(true)}
-        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${videoLoaded ? "opacity-100" : "opacity-0"}`}
-      >
-        <source src={heroVideo} type="video/mp4" />
-      </video>
-
-      {/* Dark overlay */}
       <div className="absolute inset-0 bg-dark-surface/75" />
 
       <div className="relative z-10 container-main text-center px-4 py-32">
