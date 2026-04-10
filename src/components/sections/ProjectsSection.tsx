@@ -1,13 +1,17 @@
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import factoryImg from "@/assets/factory-exterior.jpg";
-import heroImg from "@/assets/hero-factory.jpg";
+import project1 from "@/assets/project-1.png";
+import project2 from "@/assets/project-2.png";
+import project3 from "@/assets/project-3.png";
+import project4 from "@/assets/project-4.png";
+
 
 const gallery = [
-  { src: heroImg, alt: "Block production line in action" },
-  { src: factoryImg, alt: "Factory exterior and warehouse" },
-  { src: heroImg, alt: "Concrete block construction site" },
-  { src: factoryImg, alt: "Installed window project" },
+  { src: project1, alt: "Modern construction site with premium concrete blocks" },
+  { src: project2, alt: "Luxury residential courtyard with modular pavers" },
+  { src: project3, alt: "Sleek industrial interior with high-performance windows" },
+  { src: project4, alt: "State-of-the-art concrete manufacturing facility" },
 ];
+
 
 const ProjectsSection = () => {
   const { ref, isVisible } = useScrollAnimation();
