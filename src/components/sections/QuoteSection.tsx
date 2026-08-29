@@ -1,139 +1,86 @@
-import { useState } from "react";
-import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import { products } from "@/data/products";
-import { Send, CheckCircle, Loader2 } from "lucide-react";
-
-const WEB3FORMS_ACCESS_KEY = "d95e525d-1f96-4399-b39d-e498f99c5d12";
+import { Send } from "lucide-react";
 
 const QuoteSection = () => {
-  const { ref, isVisible } = useScrollAnimation();
-  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
-  const [errorMsg, setErrorMsg] = useState("");
+    return (
+        <section id="quote" className="py-20 md:py-24 bg-[#f8f9fa]">
+            <div className="container-main max-w-4xl mx-auto">
+                <div className="text-center mb-10">
+                    <div className="w-16 h-1 bg-accent mx-auto mb-6" />
+                    <h2 className="text-4xl md:text-5xl font-heading font-bold text-gray-900 mb-4 tracking-tight">
+                        Request a Quote
+                    </h2>
+                    <p className="text-gray-600 max-w-2xl mx-auto text-lg font-body">
+                        Tell us about your project requirements and we'll get back to you
+                        within 24 hours with a competitive quote.
+                    </p>
+                </div>
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setStatus("loading");
-    setErrorMsg("");
+                <form className="max-w-[700px] mx-auto" onSubmit={(e) => e.preventDefault()}>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                        <input
+                            type="text"
+                            placeholder="Your Name *"
+                            required
+                            className="w-full px-4 py-3 rounded-md border border-gray-200 focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent bg-white text-gray-800 placeholder:text-gray-400 font-body outline-none transition-shadow"
+                        />
+                        <input
+                            type="tel"
+                            placeholder="Phone Number *"
+                            required
+                            className="w-full px-4 py-3 rounded-md border border-gray-200 focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent bg-white text-gray-800 placeholder:text-gray-400 font-body outline-none transition-shadow"
+                        />
+                    </div>
 
-    const form = e.currentTarget;
-    const formData = new FormData(form);
-    formData.append("access_key", WEB3FORMS_ACCESS_KEY);
-    formData.append("subject", "New Quote Request — Mayapur Crafts Website");
-    formData.append("from_name", "Mayapur Crafts Website");
+                    <div className="mb-4 relative">
+                        <select
+                            required
+                            className="w-full px-4 py-3 rounded-md border border-gray-200 focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent bg-white text-gray-800 appearance-none cursor-pointer font-body outline-none transition-shadow"
+                            defaultValue=""
+                        >
+                            <option value="" disabled hidden className="text-gray-400">
+                                Select Product *
+                            </option>
+                            <option value="upvc-windows">uPVC Windows</option>
+                            <option value="upvc-doors">uPVC Doors</option>
+                            <option value="modular-kitchen">Modular Kitchen</option>
+                            <option value="hollow-blocks">Hollow Blocks (concrete)</option>
+                            <option value="bricks">Bricks (concrete)</option>
+                            <option value="pavement-blocks">Pavement Blocks</option>
+                        </select>
+                        <div className="absolute inset-y-0 right-0 flex items-center px-4 pointer-events-none">
+                            <svg className="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </div>
+                    </div>
 
-    try {
-      const res = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        body: formData,
-      });
-      const data = await res.json();
+                    <div className="mb-4">
+                        <input
+                            type="text"
+                            placeholder="Approximate Quantity"
+                            className="w-full px-4 py-3 rounded-md border border-gray-200 focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent bg-white text-gray-800 placeholder:text-gray-400 font-body outline-none transition-shadow"
+                        />
+                    </div>
 
-      if (data.success) {
-        setStatus("success");
-        form.reset();
-        setTimeout(() => setStatus("idle"), 5000);
-      } else {
-        setStatus("error");
-        setErrorMsg(data.message || "Something went wrong. Please try again.");
-      }
-    } catch {
-      setStatus("error");
-      setErrorMsg("Network error. Please check your connection and try again.");
-    }
-  };
+                    <div className="mb-8">
+                        <textarea
+                            placeholder="Your Message / Requirements"
+                            rows={5}
+                            className="w-full px-4 py-3 rounded-md border border-gray-200 focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent bg-white text-gray-800 placeholder:text-gray-400 resize-y font-body outline-none transition-shadow"
+                        />
+                    </div>
 
-  return (
-    <section id="quote" className="section-padding bg-background">
-      <div
-        ref={ref}
-        className={`container-main transition-all duration-700 ${
-          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-        }`}
-      >
-        <div className="max-w-2xl mx-auto">
-          <div className="text-center mb-12">
-            <div className="accent-bar mx-auto mb-4" />
-            <h2 className="section-title text-foreground">Request a Quote</h2>
-            <p className="section-subtitle mx-auto mt-4">
-              Tell us about your project requirements and we'll get back to you within 24 hours with a competitive quote.
-            </p>
-          </div>
-
-          {status === "success" ? (
-            <div className="text-center py-12 bg-accent/10 rounded-lg border border-accent/20">
-              <CheckCircle size={48} className="text-accent mx-auto mb-4" />
-              <p className="text-xl font-heading font-semibold text-accent">Thank you! Your request has been submitted.</p>
-              <p className="text-muted-foreground mt-2">We'll get back to you shortly.</p>
+                    <button
+                        type="submit"
+                        className="w-full bg-accent hover:bg-accent/90 text-white font-heading font-medium tracking-wide py-4 px-8 rounded-md flex items-center justify-center gap-2 transition-colors duration-300 shadow-sm"
+                    >
+                        <Send size={18} className="rotate-[-45deg] -mt-1" />
+                        Submit Enquiry
+                    </button>
+                </form>
             </div>
-          ) : (
-            <form onSubmit={handleSubmit} className="space-y-4">
-              {/* Hidden honeypot for spam protection */}
-              <input type="checkbox" name="botcheck" className="hidden" style={{ display: "none" }} />
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <input
-                  type="text"
-                  name="name"
-                  placeholder="Your Name *"
-                  required
-                  className="w-full px-4 py-3 rounded border border-border bg-card text-foreground focus:outline-none focus:ring-2 focus:ring-accent"
-                />
-                <input
-                  type="tel"
-                  name="phone"
-                  placeholder="Phone Number *"
-                  required
-                  className="w-full px-4 py-3 rounded border border-border bg-card text-foreground focus:outline-none focus:ring-2 focus:ring-accent"
-                />
-              </div>
-              <select
-                name="product"
-                required
-                className="w-full px-4 py-3 rounded border border-border bg-card text-foreground focus:outline-none focus:ring-2 focus:ring-accent"
-              >
-                <option value="">Select Product *</option>
-                {products.map((p) => (
-                  <option key={p.id} value={p.name}>{p.name}</option>
-                ))}
-              </select>
-              <input
-                type="text"
-                name="quantity"
-                placeholder="Approximate Quantity"
-                className="w-full px-4 py-3 rounded border border-border bg-card text-foreground focus:outline-none focus:ring-2 focus:ring-accent"
-              />
-              <textarea
-                name="message"
-                rows={4}
-                placeholder="Your Message / Requirements"
-                className="w-full px-4 py-3 rounded border border-border bg-card text-foreground focus:outline-none focus:ring-2 focus:ring-accent resize-none"
-              />
-
-              {status === "error" && (
-                <p className="text-sm text-red-500 bg-red-50 p-3 rounded">{errorMsg}</p>
-              )}
-
-              <button
-                type="submit"
-                disabled={status === "loading"}
-                className="btn-hero-primary w-full flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed"
-              >
-                {status === "loading" ? (
-                  <>
-                    <Loader2 size={18} className="animate-spin" /> Submitting...
-                  </>
-                ) : (
-                  <>
-                    <Send size={18} /> Submit Enquiry
-                  </>
-                )}
-              </button>
-            </form>
-          )}
-        </div>
-      </div>
-    </section>
-  );
+        </section>
+    );
 };
 
 export default QuoteSection;

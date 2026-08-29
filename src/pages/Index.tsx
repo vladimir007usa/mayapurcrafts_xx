@@ -6,8 +6,8 @@ import ProcessSection from "@/components/sections/ProcessSection";
 import ParallaxWindow from "@/components/sections/ParallaxWindow";
 import ProjectsSection from "@/components/sections/ProjectsSection";
 import InfrastructureSection from "@/components/sections/InfrastructureSection";
-import TestimonialsSection from "@/components/sections/TestimonialsSection";
 import QuoteSection from "@/components/sections/QuoteSection";
+import TestimonialsSection from "@/components/sections/TestimonialsSection";
 import ContactSection from "@/components/sections/ContactSection";
 
 const Index = () => {
