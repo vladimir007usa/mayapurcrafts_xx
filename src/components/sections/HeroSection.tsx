@@ -7,8 +7,8 @@ const HeroSection = () => {
   };
 
   return (
-    <section 
-      id="hero" 
+    <section
+      id="hero"
       className="relative min-h-screen flex items-center justify-center overflow-hidden bg-cover bg-center bg-no-repeat"
       style={{ backgroundImage: `url(${heroImg})` }}
     >
@@ -18,19 +18,19 @@ const HeroSection = () => {
         <p className="text-accent font-heading font-semibold tracking-[0.3em] uppercase text-sm md:text-base mb-4 animate-fade-up">
           Mayapur crafts Manufacturing
         </p>
-        
+
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold text-primary-foreground leading-tight mb-6 animate-fade-up" style={{ animationDelay: "0.15s" }}>
           Precision. Strength.<br />
           <span className="text-accent">Innovation in Manufacturing.</span>
         </h1>
 
-        <p 
-          className="text-lg md:text-xl text-dark-surface-foreground/80 max-w-4xl mx-auto mb-10 animate-fade-up leading-relaxed" 
+        <p
+          className="text-lg md:text-xl text-dark-surface-foreground/80 max-w-4xl mx-auto mb-10 animate-fade-up leading-relaxed"
           style={{ animationDelay: "0.3s" }}
         >
-          Leading manufacturer of Bricks (concrete), uPVC windows, uPVC doors, Modular Kitchen, 
+          Leading manufacturer of Bricks (concrete), uPVC windows, uPVC doors, Modular Kitchen,{" "}
           <br className="md:block hidden" />
-          pavement blocks, and Hollow Blocks (concrete) products engineered 
+          pavement blocks, and Hollow Blocks (concrete) products engineered{" "}
           <br className="md:block hidden" />
           for durability and delivered on time.
         </p>
