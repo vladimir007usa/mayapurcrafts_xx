@@ -1,14 +1,14 @@
 import { Link } from "react-router-dom";
-import { 
-  Phone, 
-  Mail, 
-  MapPin, 
-  Clock, 
-  ArrowUp, 
-  Facebook, 
-  Instagram, 
-  Linkedin, 
-  Youtube 
+import {
+  Phone,
+  Mail,
+  MapPin,
+  Clock,
+  ArrowUp,
+  Facebook,
+  Instagram,
+  Linkedin,
+  Youtube
 } from "lucide-react";
 import { products } from "@/data/products";
 
@@ -32,7 +32,7 @@ const Footer = () => {
               MAYAPUR<span className="text-accent">CRAFTS</span>
             </h3>
             <p className="text-dark-surface-foreground/70 text-sm leading-relaxed">
-              Precision-engineered construction materials built with advanced machinery 
+              Precision-engineered construction materials built with advanced machinery
               and rigorous quality control. Trusted by builders across the region.
             </p>
             <div className="flex gap-4 mt-6">
@@ -82,19 +82,19 @@ const Footer = () => {
             <h4 className="font-heading font-semibold text-lg mb-4 uppercase tracking-wider">Contact Us</h4>
             <ul className="space-y-3 text-sm text-dark-surface-foreground/70">
               <li className="flex gap-3">
-                <MapPin size={18} className="text-accent shrink-0 mt-0.5" /> 
+                <MapPin size={18} className="text-accent shrink-0 mt-0.5" />
                 12, National Highway, Dhubulia, Chaugachhahansadanga, West Bengal 741140, India
               </li>
               <li className="flex gap-3">
-                <Phone size={18} className="text-accent shrink-0" /> 
-                +91 760 18 33 858
+                <Phone size={18} className="text-accent shrink-0" />
+                +91 9239633577
               </li>
               <li className="flex gap-3">
-                <Mail size={18} className="text-accent shrink-0" /> 
-                info@mayapurcrafts.com
+                <Mail size={18} className="text-accent shrink-0" />
+                mayapurcraft@gmail.com
               </li>
               <li className="flex gap-3">
-                <Clock size={18} className="text-accent shrink-0" /> 
+                <Clock size={18} className="text-accent shrink-0" />
                 Mon – Sat: 9:00 AM – 6:00 PM
               </li>
             </ul>
@@ -105,8 +105,8 @@ const Footer = () => {
           <p className="text-xs text-dark-surface-foreground/50">
             © {new Date().getFullYear()} Mayapurcrafts. All rights reserved.
           </p>
-          <button 
-            onClick={scrollToTop} 
+          <button
+            onClick={scrollToTop}
             className="w-10 h-10 rounded-full border border-dark-surface-foreground/20 flex items-center justify-center text-dark-surface-foreground/60 hover:bg-accent hover:border-accent hover:text-accent-foreground transition-all"
           >
             <ArrowUp size={18} />
