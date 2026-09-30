@@ -4,11 +4,11 @@ interface WhatsAppIconProps {
 }
 
 const WhatsAppIcon = ({ size = 24, className = "" }: WhatsAppIconProps) => (
-  <svg 
-    viewBox="0 0 24 24" 
-    width={size} 
-    height={size} 
-    fill="currentColor" 
+  <svg
+    viewBox="0 0 24 24"
+    width={size}
+    height={size}
+    fill="currentColor"
     className={className}
     xmlns="http://www.w3.org/2000/svg"
   >
@@ -18,7 +18,7 @@ const WhatsAppIcon = ({ size = 24, className = "" }: WhatsAppIconProps) => (
 
 const WhatsAppButton = () => (
   <a
-    href="https://wa.me/917601833858?text=Hello%2C%20I%20am%20interested%20in%20your%20products."
+    href="https://wa.me/919239633577?text=Hello%2C%20I%20am%20interested%20in%20your%20products."
     target="_blank"
     rel="noopener noreferrer"
     className="whatsapp-float group"

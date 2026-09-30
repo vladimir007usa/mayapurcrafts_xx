@@ -12,7 +12,7 @@ const navLinks = [
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  
+
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -27,7 +27,7 @@ const Header = () => {
   useEffect(() => {
     if (location.pathname === "/" && location.state?.scrollTo) {
       const sectionId = location.state.scrollTo;
-      
+
       window.history.replaceState({}, document.title);
 
       const timer = setTimeout(() => {
@@ -56,15 +56,14 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
           ? "bg-dark-surface/95 backdrop-blur-md shadow-lg py-2"
           : "bg-transparent py-4"
-      }`}
+        }`}
     >
       <div className="container-main flex items-center justify-between">
-        <Link 
-          to="/" 
+        <Link
+          to="/"
           onClick={() => handleNavClick("hero")}
           className="text-2xl md:text-3xl font-heading font-bold text-primary-foreground tracking-wider"
         >
@@ -114,10 +113,10 @@ const Header = () => {
               </button>
             ))}
             <a
-              href="tel:+917601833858" 
+              href="tel:+919239633577"
               className="flex items-center gap-2 text-accent font-semibold mt-2"
             >
-              <Phone size={18} /> +91 760 18 33 858
+              <Phone size={18} /> +91 9239633577
 
             </a>
           </nav>
