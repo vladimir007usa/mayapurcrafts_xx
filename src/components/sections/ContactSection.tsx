@@ -6,17 +6,16 @@ const ContactSection = () => {
 
   // Using the specific business name in the search to force the red pin
   const businessSearch = "Mayapur Crafts Pvt Ltd, Mayapur, West Bengal";
-  
+
   // Official standard search embed format (no API key required)
   const mapSrc = `https://www.google.com/maps?q=${encodeURIComponent(businessSearch)}&output=embed&z=15`;
 
   return (
     <section id="contact" className="section-padding section-dark bg-dark-surface">
-      <div 
-        ref={ref} 
-        className={`container-main transition-all duration-700 ${
-          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-        }`}
+      <div
+        ref={ref}
+        className={`container-main transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}
       >
         <div className="text-center mb-16">
           <div className="accent-bar mx-auto mb-4" />
@@ -28,25 +27,25 @@ const ContactSection = () => {
           <div className="flex flex-col justify-center">
             <div className="space-y-8">
               {[
-                { 
-                  icon: MapPin, 
-                  title: "Address", 
-                  value: "12, National Highway, Dhubulia, Chaugachhahansadanga, West Bengal 741140, India" 
+                {
+                  icon: MapPin,
+                  title: "Address",
+                  value: "12, National Highway, Dhubulia, Chaugachhahansadanga, West Bengal 741140, India"
                 },
-                { 
-                  icon: Phone, 
-                  title: "Phone", 
-                  value: "+91 760 18 33 858" 
+                {
+                  icon: Phone,
+                  title: "Phone",
+                  value: "+91 9239633577"
                 },
-                { 
-                  icon: Mail, 
-                  title: "Email", 
-                  value: "info@mayapurcrafts.com" 
+                {
+                  icon: Mail,
+                  title: "Email",
+                  value: "mayapurcraft@gmail.com"
                 },
-                { 
-                  icon: Clock, 
-                  title: "Working Hours", 
-                  value: "Monday – Saturday: 9:00 AM – 6:00 PM" 
+                {
+                  icon: Clock,
+                  title: "Working Hours",
+                  value: "Monday – Saturday: 9:00 AM – 6:00 PM"
                 },
               ].map((item) => (
                 <div key={item.title} className="flex gap-5">
